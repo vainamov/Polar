@@ -168,4 +168,42 @@ Public Class mainform
         End If
     End Sub
 
+    Private Sub btn_addColor_Click(sender As Object, e As EventArgs) Handles btn_addColor.Click
+        Dim addclrfrm As New addcolorform
+        If addclrfrm.ShowDialog() = DialogResult.OK Then
+            Dim HexCode As String
+            Dim c As Color
+            If Regex.IsMatch(addclrfrm.Colorcode, "#[0-9a-fA-F]{6}$") Then
+                HexCode = addclrfrm.Colorcode
+            ElseIf Regex.IsMatch(addclrfrm.Colorcode, "([0-9]{1,3}; ){2}[0-9]{1,3}$") Then
+                c = Color.FromArgb(Integer.Parse(addclrfrm.Colorcode.Split(";"c)(0).Trim(" "c)), Integer.Parse(addclrfrm.Colorcode.Split(";"c)(1).Trim(" "c)), Integer.Parse(addclrfrm.Colorcode.Split(";"c)(2).Trim(" "c)))
+                HexCode = ColorTranslator.ToHtml(c)
+            ElseIf Regex.IsMatch(addclrfrm.Colorcode, "((0|1),?[0-9]*; ){3}((0|1),?[0-9]*){1}") Then
+                Dim tCMYK As New List(Of Double)
+                tCMYK.AddRange({Double.Parse(addclrfrm.Colorcode.Split(";"c)(0).Trim(" "c)), Double.Parse(addclrfrm.Colorcode.Split(";"c)(1).Trim(" "c)), Double.Parse(addclrfrm.Colorcode.Split(";"c)(2).Trim(" "c)), Double.Parse(addclrfrm.Colorcode.Split(";"c)(3).Trim(" "c))})
+                Dim tRGB As List(Of Integer) = FestivalColorConverter.CMYKtoRGB(tCMYK)
+                c = Color.FromArgb(tRGB(0), tRGB(1), tRGB(2))
+                HexCode = ColorTranslator.ToHtml(c)
+            End If
+            AddColor(HexCode, addclrfrm.Description)
+        End If
+    End Sub
+
+    Private Sub btn_upload_Click(sender As Object, e As EventArgs) Handles btn_upload.Click
+        Dim sf As New ShareForm
+        sf.FilePathOnLocal = DatabasePath
+        If sf.ShowDialog() = DialogResult.OK Then
+            If Not sf.FilePathOnServer = "error" Then
+                Dim ucd As New UploadCompletedDialog
+                ucd.Identifier = String.Format("floe:author:{0}:set:{1}", sf.AuthorName, sf.SetName)
+                ucd.ShowDialog()
+            End If
+        End If
+    End Sub
+
+    Private Sub btn_floe_Click(sender As Object, e As EventArgs) Handles btn_floe.Click
+        Dim dff As New DownloadFromFloe
+        dff.Show()
+    End Sub
+
 End Class

@@ -38,7 +38,12 @@ Partial Class mainform
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.RemoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchTextbox = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn_floe = New System.Windows.Forms.Button()
+        Me.btn_upload = New System.Windows.Forms.Button()
+        Me.btn_addColor = New System.Windows.Forms.Button()
         Me.cms_ColorListEntry.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -60,7 +65,7 @@ Partial Class mainform
         Me.ColorListContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ColorListContainer.Location = New System.Drawing.Point(0, 55)
         Me.ColorListContainer.Name = "ColorListContainer"
-        Me.ColorListContainer.Size = New System.Drawing.Size(301, 407)
+        Me.ColorListContainer.Size = New System.Drawing.Size(301, 367)
         Me.ColorListContainer.TabIndex = 1
         '
         'cms_ColorListEntry
@@ -147,14 +152,58 @@ Partial Class mainform
         Me.SearchTextbox.Size = New System.Drawing.Size(280, 23)
         Me.SearchTextbox.TabIndex = 2
         '
+        'Panel1
+        '
+        Me.Panel1.AutoScroll = True
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.btn_floe)
+        Me.Panel1.Controls.Add(Me.btn_upload)
+        Me.Panel1.Controls.Add(Me.btn_addColor)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 422)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(301, 40)
+        Me.Panel1.TabIndex = 3
+        '
+        'btn_floe
+        '
+        Me.btn_floe.BackgroundImage = CType(resources.GetObject("btn_floe.BackgroundImage"), System.Drawing.Image)
+        Me.btn_floe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_floe.Location = New System.Drawing.Point(80, 4)
+        Me.btn_floe.Name = "btn_floe"
+        Me.btn_floe.Size = New System.Drawing.Size(32, 32)
+        Me.btn_floe.TabIndex = 2
+        Me.btn_floe.UseVisualStyleBackColor = True
+        '
+        'btn_upload
+        '
+        Me.btn_upload.BackgroundImage = CType(resources.GetObject("btn_upload.BackgroundImage"), System.Drawing.Image)
+        Me.btn_upload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_upload.Location = New System.Drawing.Point(42, 4)
+        Me.btn_upload.Name = "btn_upload"
+        Me.btn_upload.Size = New System.Drawing.Size(32, 32)
+        Me.btn_upload.TabIndex = 1
+        Me.btn_upload.UseVisualStyleBackColor = True
+        '
+        'btn_addColor
+        '
+        Me.btn_addColor.BackgroundImage = CType(resources.GetObject("btn_addColor.BackgroundImage"), System.Drawing.Image)
+        Me.btn_addColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_addColor.Location = New System.Drawing.Point(4, 4)
+        Me.btn_addColor.Name = "btn_addColor"
+        Me.btn_addColor.Size = New System.Drawing.Size(32, 32)
+        Me.btn_addColor.TabIndex = 0
+        Me.btn_addColor.UseVisualStyleBackColor = True
+        '
         'mainform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(301, 462)
-        Me.Controls.Add(Me.SearchTextbox)
         Me.Controls.Add(Me.ColorListContainer)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.SearchTextbox)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
@@ -164,6 +213,7 @@ Partial Class mainform
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Polar"
         Me.cms_ColorListEntry.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -183,4 +233,8 @@ Partial Class mainform
     Friend WithEvents CopyCMYToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CopyCMYKToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SearchTextbox As TextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btn_floe As Button
+    Friend WithEvents btn_upload As Button
+    Friend WithEvents btn_addColor As Button
 End Class

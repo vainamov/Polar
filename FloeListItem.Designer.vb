@@ -31,20 +31,22 @@ Partial Class FloeListItem
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(6, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(8, 30)
         Me.Label1.Name = "Label1"
         Me.Label1.Padding = New System.Windows.Forms.Padding(3)
-        Me.Label1.Size = New System.Drawing.Size(133, 25)
+        Me.Label1.Size = New System.Drawing.Size(135, 25)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Testset by Vainamo"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(96, Byte), Integer))
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!)
+        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(8, 6)
         Me.Label2.Name = "Label2"
         Me.Label2.Padding = New System.Windows.Forms.Padding(3)

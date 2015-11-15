@@ -11,11 +11,12 @@ Public Class DownloadFromFloe
         tFLI.Setname = Filename.Split("."c)(0).Split("_"c)(1)
         tFLI.Dock = DockStyle.Top
         FLI = tFLI
+        AddHandler FLI.Download, AddressOf Download
         FloeListItems.Add(FLI)
         Panel2.Controls.Add(FLI)
     End Sub
 
-    Sub FLI_DownloadStarted(ByVal Path As String) Handles FLI.Download
+    Sub Download(ByVal Path As String)
         Dim WC As WebClient = New WebClient()
         Dim content As String = WC.DownloadString(Path)
         Using SFD As New SaveFileDialog With {.Filter = "Polar-Colorsets (*.pcs)|*.pcs", .Title = "Save"}

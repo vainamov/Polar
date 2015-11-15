@@ -24,8 +24,8 @@ Partial Class DownloadFromFloe
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DownloadFromFloe))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.SearchTextbox = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.SearchTextbox = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -41,14 +41,6 @@ Partial Class DownloadFromFloe
         Me.Panel1.Size = New System.Drawing.Size(384, 65)
         Me.Panel1.TabIndex = 0
         '
-        'SearchTextbox
-        '
-        Me.SearchTextbox.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.SearchTextbox.Location = New System.Drawing.Point(12, 30)
-        Me.SearchTextbox.Name = "SearchTextbox"
-        Me.SearchTextbox.Size = New System.Drawing.Size(360, 23)
-        Me.SearchTextbox.TabIndex = 3
-        '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.White
@@ -61,6 +53,14 @@ Partial Class DownloadFromFloe
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Search by identifier, name or author."
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'SearchTextbox
+        '
+        Me.SearchTextbox.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.SearchTextbox.Location = New System.Drawing.Point(12, 30)
+        Me.SearchTextbox.Name = "SearchTextbox"
+        Me.SearchTextbox.Size = New System.Drawing.Size(360, 23)
+        Me.SearchTextbox.TabIndex = 3
         '
         'Panel2
         '
@@ -79,11 +79,10 @@ Partial Class DownloadFromFloe
         Me.ClientSize = New System.Drawing.Size(384, 462)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(400, 100000)
-        Me.MinimumSize = New System.Drawing.Size(400, 0)
+        Me.MinimumSize = New System.Drawing.Size(400, 38)
         Me.Name = "DownloadFromFloe"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Floe"

@@ -17,3 +17,4 @@ C:\Users\Fabian\druckumgebung\documents\visual studio 2015\Projects\Polar\Polar\
 C:\Users\Fabian\druckumgebung\documents\visual studio 2015\Projects\Polar\Polar\obj\Debug\Polar.DownloadFromFloe.resources
 C:\Users\Fabian\druckumgebung\documents\visual studio 2015\Projects\Polar\Polar\obj\Debug\Polar.FloeListItem.resources
 C:\Users\Fabian\druckumgebung\documents\visual studio 2015\Projects\Polar\Polar\obj\Debug\Polar.vbprojResolveAssemblyReference.cache
+C:\Users\Fabian\druckumgebung\documents\visual studio 2015\Projects\Polar\Polar\obj\Debug\Polar.DownloadCompletedDialog.resources

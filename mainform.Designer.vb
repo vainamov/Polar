@@ -39,6 +39,7 @@ Partial Class mainform
         Me.RemoveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchTextbox = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn_home = New System.Windows.Forms.Button()
         Me.btn_floe = New System.Windows.Forms.Button()
         Me.btn_upload = New System.Windows.Forms.Button()
         Me.btn_addColor = New System.Windows.Forms.Button()
@@ -61,6 +62,7 @@ Partial Class mainform
         '
         'ColorListContainer
         '
+        Me.ColorListContainer.AllowDrop = True
         Me.ColorListContainer.AutoScroll = True
         Me.ColorListContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ColorListContainer.Location = New System.Drawing.Point(0, 55)
@@ -156,6 +158,7 @@ Partial Class mainform
         '
         Me.Panel1.AutoScroll = True
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.btn_home)
         Me.Panel1.Controls.Add(Me.btn_floe)
         Me.Panel1.Controls.Add(Me.btn_upload)
         Me.Panel1.Controls.Add(Me.btn_addColor)
@@ -165,11 +168,21 @@ Partial Class mainform
         Me.Panel1.Size = New System.Drawing.Size(301, 40)
         Me.Panel1.TabIndex = 3
         '
+        'btn_home
+        '
+        Me.btn_home.BackgroundImage = CType(resources.GetObject("btn_home.BackgroundImage"), System.Drawing.Image)
+        Me.btn_home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_home.Location = New System.Drawing.Point(4, 4)
+        Me.btn_home.Name = "btn_home"
+        Me.btn_home.Size = New System.Drawing.Size(32, 32)
+        Me.btn_home.TabIndex = 3
+        Me.btn_home.UseVisualStyleBackColor = True
+        '
         'btn_floe
         '
         Me.btn_floe.BackgroundImage = CType(resources.GetObject("btn_floe.BackgroundImage"), System.Drawing.Image)
         Me.btn_floe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_floe.Location = New System.Drawing.Point(80, 4)
+        Me.btn_floe.Location = New System.Drawing.Point(118, 4)
         Me.btn_floe.Name = "btn_floe"
         Me.btn_floe.Size = New System.Drawing.Size(32, 32)
         Me.btn_floe.TabIndex = 2
@@ -179,7 +192,7 @@ Partial Class mainform
         '
         Me.btn_upload.BackgroundImage = CType(resources.GetObject("btn_upload.BackgroundImage"), System.Drawing.Image)
         Me.btn_upload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_upload.Location = New System.Drawing.Point(42, 4)
+        Me.btn_upload.Location = New System.Drawing.Point(80, 4)
         Me.btn_upload.Name = "btn_upload"
         Me.btn_upload.Size = New System.Drawing.Size(32, 32)
         Me.btn_upload.TabIndex = 1
@@ -189,7 +202,7 @@ Partial Class mainform
         '
         Me.btn_addColor.BackgroundImage = CType(resources.GetObject("btn_addColor.BackgroundImage"), System.Drawing.Image)
         Me.btn_addColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btn_addColor.Location = New System.Drawing.Point(4, 4)
+        Me.btn_addColor.Location = New System.Drawing.Point(42, 4)
         Me.btn_addColor.Name = "btn_addColor"
         Me.btn_addColor.Size = New System.Drawing.Size(32, 32)
         Me.btn_addColor.TabIndex = 0
@@ -237,4 +250,5 @@ Partial Class mainform
     Friend WithEvents btn_floe As Button
     Friend WithEvents btn_upload As Button
     Friend WithEvents btn_addColor As Button
+    Friend WithEvents btn_home As Button
 End Class

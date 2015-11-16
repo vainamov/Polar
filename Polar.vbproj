@@ -96,6 +96,12 @@
     <Compile Include="ColorListEntry.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="DownloadCompletedDialog.Designer.vb">
+      <DependentUpon>DownloadCompletedDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadCompletedDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DownloadFromFloe.Designer.vb">
       <DependentUpon>DownloadFromFloe.vb</DependentUpon>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ColorListEntry.resx">
       <DependentUpon>ColorListEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownloadCompletedDialog.resx">
+      <DependentUpon>DownloadCompletedDialog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DownloadFromFloe.resx">
       <DependentUpon>DownloadFromFloe.vb</DependentUpon>

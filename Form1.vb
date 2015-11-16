@@ -27,4 +27,23 @@
         End Using
     End Sub
 
+    Sub ExecuteParameter()
+        Try
+            Dim args() As String = Environment.GetCommandLineArgs
+            If args(1) <> Nothing Then
+                Dim Filepath As String = args(1)
+                Dim mainfrm As New mainform
+                mainfrm.Show()
+                Me.Hide()
+                mainfrm.LoadFromFile(Filepath)
+            End If
+        Catch
+
+        End Try
+    End Sub
+
+    Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        ExecuteParameter()
+    End Sub
+
 End Class

@@ -65,7 +65,7 @@ Partial Class UploadCompletedDialog
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(329, 135)
+        Me.ClientSize = New System.Drawing.Size(327, 135)
         Me.Controls.Add(Me.OkButton)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label6)

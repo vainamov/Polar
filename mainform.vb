@@ -1,4 +1,5 @@
-﻿Imports System.ComponentModel
+﻿Imports System.Collections.Specialized
+Imports System.ComponentModel
 Imports System.Text.RegularExpressions
 Imports INILib
 
@@ -51,6 +52,7 @@ Public Class mainform
     Public Sub LoadFromFile(ByVal Path As String)
         DatabasePath = Path
         Database = New IniFile(Path)
+        ColorListContainer.Controls.Clear()
         For Each KVP As IniFileKeyValuePair In Database.Sections("polar.database").KeyValues
             If Not KVP.Value = "none" Then
                 CLE = New ColorListEntry(KVP.Value, KVP.Key)
@@ -204,6 +206,31 @@ Public Class mainform
     Private Sub btn_floe_Click(sender As Object, e As EventArgs) Handles btn_floe.Click
         Dim dff As New DownloadFromFloe
         dff.Show()
+    End Sub
+
+    Private Sub btn_home_Click(sender As Object, e As EventArgs) Handles btn_home.Click
+        Application.Restart()
+    End Sub
+
+    Private Sub ColorListContainer_DragEnter(sender As Object, e As DragEventArgs) Handles ColorListContainer.DragEnter
+        Dim data = DirectCast(e.Data, DataObject)
+        If data.ContainsFileDropList = True Then
+            e.Effect = DragDropEffects.Copy
+        End If
+    End Sub
+
+    Private Sub ColorListContainer_DragDrop(sender As Object, e As DragEventArgs) Handles ColorListContainer.DragDrop
+        Dim data = DirectCast(e.Data, DataObject)
+        Dim files As StringCollection = data.GetFileDropList
+        If files.Count > 1 Then
+            MessageBox.Show("You can only drop one colorset at once.", "Polar", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            If System.IO.File.ReadAllLines(files(0))(0) = "[polar.database]" Then
+                LoadFromFile(files(0))
+            Else
+                MessageBox.Show("This is not a valid colorset.", "Polar", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        End If
     End Sub
 
 End Class

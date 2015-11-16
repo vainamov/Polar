@@ -1,4 +1,5 @@
 ﻿Imports System.Net
+Imports System.Reflection
 
 Public Class DownloadFromFloe
 
@@ -22,7 +23,11 @@ Public Class DownloadFromFloe
         Using SFD As New SaveFileDialog With {.Filter = "Polar-Colorsets (*.pcs)|*.pcs", .Title = "Save"}
             If SFD.ShowDialog() = DialogResult.OK Then
                 System.IO.File.WriteAllText(SFD.FileName, content)
-                MessageBox.Show("Colorset saved to " & SFD.FileName & ".", "Floe", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Dim dcd As New DownloadCompletedDialog
+                dcd.Path = SFD.FileName
+                If dcd.ShowDialog() = DialogResult.Yes Then
+                    'Process.Start(Application.ExecutablePath & " " & SFD.FileName)
+                End If
             End If
         End Using
     End Sub

@@ -37,7 +37,7 @@ Public Class mainform
             If sf.ShowDialog() = DialogResult.OK Then
                 If Not sf.FilePathOnServer = "error" Then
                     Dim ucd As New UploadCompletedDialog
-                    ucd.Identifier = String.Format("floe:author:{0}:set:{1}", sf.AuthorName, sf.SetName)
+                    ucd.Identifier = String.Format("http://floe.festival.square7.de/sets/{0}/{1}", sf.AuthorName, sf.SetName)
                     ucd.ShowDialog()
                 End If
             End If

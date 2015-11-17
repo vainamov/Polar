@@ -2,7 +2,7 @@
 
 Public Class addcolorform
 
-    Private Sub ColorcodeTextbox_TextChanged(sender As Object, e As EventArgs) Handles ColorcodeTextbox.TextChanged
+    Private Sub ColorcodeTextbox_TextChanged(sender As Object, e As EventArgs) Handles ColorcodeTextbox.TextChanged, ComboBox1.SelectedIndexChanged
         Button2.Enabled = False
         ColorcodeTextbox.ForeColor = Color.Black
         Select Case ComboBox1.SelectedIndex

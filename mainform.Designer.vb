@@ -44,6 +44,7 @@ Partial Class mainform
         Me.btn_upload = New System.Windows.Forms.Button()
         Me.btn_addColor = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btn_playground = New System.Windows.Forms.Button()
         Me.cms_ColorListEntry.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -159,6 +160,7 @@ Partial Class mainform
         '
         Me.Panel1.AutoScroll = True
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.btn_playground)
         Me.Panel1.Controls.Add(Me.btn_home)
         Me.Panel1.Controls.Add(Me.btn_floe)
         Me.Panel1.Controls.Add(Me.btn_upload)
@@ -217,6 +219,17 @@ Partial Class mainform
         '
         Me.ToolTip1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(96, Byte), Integer))
         '
+        'btn_playground
+        '
+        Me.btn_playground.BackgroundImage = CType(resources.GetObject("btn_playground.BackgroundImage"), System.Drawing.Image)
+        Me.btn_playground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btn_playground.Location = New System.Drawing.Point(156, 4)
+        Me.btn_playground.Name = "btn_playground"
+        Me.btn_playground.Size = New System.Drawing.Size(32, 32)
+        Me.btn_playground.TabIndex = 4
+        Me.ToolTip1.SetToolTip(Me.btn_playground, "Playground")
+        Me.btn_playground.UseVisualStyleBackColor = True
+        '
         'mainform
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -261,4 +274,5 @@ Partial Class mainform
     Friend WithEvents btn_addColor As Button
     Friend WithEvents btn_home As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents btn_playground As Button
 End Class

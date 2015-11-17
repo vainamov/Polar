@@ -233,4 +233,10 @@ Public Class mainform
         End If
     End Sub
 
+    Private Sub btn_playground_Click(sender As Object, e As EventArgs) Handles btn_playground.Click
+        Dim frm_playground As New TestForm
+        frm_playground.Show()
+        frm_playground.LoadColors(ColorListEntries)
+    End Sub
+
 End Class

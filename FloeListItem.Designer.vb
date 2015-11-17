@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FloeListItem
     Inherits System.Windows.Forms.UserControl
 
     'UserControl überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class FloeListItem
     'Hinweis: Die folgende Prozedur ist für den Windows Form-Designer erforderlich.
     'Das Bearbeiten ist mit dem Windows Form-Designer möglich.  
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lbl_info = New System.Windows.Forms.Label()
         Me.lbl_identifier = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -32,6 +33,7 @@ Partial Class FloeListItem
         Me.pnl_color4 = New System.Windows.Forms.Panel()
         Me.pnl_color5 = New System.Windows.Forms.Panel()
         Me.pnl_color6 = New System.Windows.Forms.Panel()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'lbl_info
@@ -51,6 +53,7 @@ Partial Class FloeListItem
         '
         Me.lbl_identifier.AutoSize = True
         Me.lbl_identifier.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(51, Byte), Integer))
+        Me.lbl_identifier.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lbl_identifier.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.lbl_identifier.ForeColor = System.Drawing.Color.White
         Me.lbl_identifier.Location = New System.Drawing.Point(8, 6)
@@ -59,6 +62,7 @@ Partial Class FloeListItem
         Me.lbl_identifier.Size = New System.Drawing.Size(175, 21)
         Me.lbl_identifier.TabIndex = 1
         Me.lbl_identifier.Text = "floe:author:vainamo:set:testset"
+        Me.ToolTip1.SetToolTip(Me.lbl_identifier, "Open in Floe Web")
         '
         'Button1
         '
@@ -136,11 +140,15 @@ Partial Class FloeListItem
         Me.pnl_color6.TabIndex = 9
         Me.pnl_color6.Visible = False
         '
+        'ToolTip1
+        '
+        Me.ToolTip1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(96, Byte), Integer))
+        '
         'FloeListItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.Transparent
         Me.Controls.Add(Me.pnl_color6)
         Me.Controls.Add(Me.pnl_color5)
         Me.Controls.Add(Me.pnl_color4)
@@ -168,4 +176,5 @@ Partial Class FloeListItem
     Friend WithEvents pnl_color4 As Panel
     Friend WithEvents pnl_color5 As Panel
     Friend WithEvents pnl_color6 As Panel
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

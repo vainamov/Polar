@@ -65,6 +65,7 @@ Partial Class DownloadFromFloe
         'Panel2
         '
         Me.Panel2.AutoScroll = True
+        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 65)
         Me.Panel2.Name = "Panel2"

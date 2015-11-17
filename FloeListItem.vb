@@ -74,4 +74,8 @@
         lbl_identifier.Visible = Not lbl_identifier.Visible
     End Sub
 
+    Private Sub lbl_identifier_Click(sender As Object, e As EventArgs) Handles lbl_identifier.Click
+        Process.Start("http://floe.festival.square7.de/colorset.php?id=" & lbl_identifier.Text)
+    End Sub
+
 End Class

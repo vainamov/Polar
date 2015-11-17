@@ -43,6 +43,7 @@ Partial Class mainform
         Me.btn_floe = New System.Windows.Forms.Button()
         Me.btn_upload = New System.Windows.Forms.Button()
         Me.btn_addColor = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.cms_ColorListEntry.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -176,6 +177,7 @@ Partial Class mainform
         Me.btn_home.Name = "btn_home"
         Me.btn_home.Size = New System.Drawing.Size(32, 32)
         Me.btn_home.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.btn_home, "Home")
         Me.btn_home.UseVisualStyleBackColor = True
         '
         'btn_floe
@@ -186,6 +188,7 @@ Partial Class mainform
         Me.btn_floe.Name = "btn_floe"
         Me.btn_floe.Size = New System.Drawing.Size(32, 32)
         Me.btn_floe.TabIndex = 2
+        Me.ToolTip1.SetToolTip(Me.btn_floe, "Floe")
         Me.btn_floe.UseVisualStyleBackColor = True
         '
         'btn_upload
@@ -196,6 +199,7 @@ Partial Class mainform
         Me.btn_upload.Name = "btn_upload"
         Me.btn_upload.Size = New System.Drawing.Size(32, 32)
         Me.btn_upload.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.btn_upload, "Share")
         Me.btn_upload.UseVisualStyleBackColor = True
         '
         'btn_addColor
@@ -206,7 +210,12 @@ Partial Class mainform
         Me.btn_addColor.Name = "btn_addColor"
         Me.btn_addColor.Size = New System.Drawing.Size(32, 32)
         Me.btn_addColor.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.btn_addColor, "Add color")
         Me.btn_addColor.UseVisualStyleBackColor = True
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(96, Byte), Integer))
         '
         'mainform
         '
@@ -251,4 +260,5 @@ Partial Class mainform
     Friend WithEvents btn_upload As Button
     Friend WithEvents btn_addColor As Button
     Friend WithEvents btn_home As Button
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

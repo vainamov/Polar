@@ -6,10 +6,11 @@ Public Class DownloadFromFloe
     Private WithEvents FLI As FloeListItem
     Private FloeListItems As New List(Of FloeListItem)
 
-    Sub Add(ByVal Filename As String)
+    Sub Add(ByVal Filename As String, ByVal Colors As List(Of Color))
         Dim tFLI As New FloeListItem
         tFLI.Author = Filename.Split("."c)(0).Split("_"c)(0)
         tFLI.Setname = Filename.Split("."c)(0).Split("_"c)(1)
+        tFLI.DefinePreviewColors(Colors)
         tFLI.Dock = DockStyle.Top
         FLI = tFLI
         AddHandler FLI.Download, AddressOf Download
@@ -17,10 +18,10 @@ Public Class DownloadFromFloe
         Panel2.Controls.Add(FLI)
     End Sub
 
-    Sub Download(ByVal Path As String)
+    Sub Download(ByVal Path As String, ByVal Setname As String)
         Dim WC As WebClient = New WebClient()
         Dim content As String = WC.DownloadString(Path)
-        Using SFD As New SaveFileDialog With {.Filter = "Polar-Colorsets (*.pcs)|*.pcs", .Title = "Save"}
+        Using SFD As New SaveFileDialog With {.Filter = "Polar-Colorsets (*.pcs)|*.pcs", .Title = "Save", .FileName = Setname}
             If SFD.ShowDialog() = DialogResult.OK Then
                 System.IO.File.WriteAllText(SFD.FileName, content)
                 Dim dcd As New DownloadCompletedDialog
@@ -58,11 +59,20 @@ Public Class DownloadFromFloe
     End Sub
 
     Private Sub DownloadFromFloe_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Dim WC As WebClient = New WebClient()
+        Dim WC As New WebClient
         Dim content As String = WC.DownloadString("http://floe.festival.square7.de/floe_list.php")
         For Each Item As String In content.Split("|"c)
             If Not Item = "floe:list" Then
-                Add(Item)
+                Dim WC2 As New WebClient
+                Dim content2 As String = WC2.DownloadString("http://floe.festival.square7.de/" & Item)
+                Dim colors As New List(Of Color)
+                For i As Integer = 2 To 8
+                    Try
+                        colors.Add(ColorTranslator.FromHtml(content2.Split(vbCrLf.ToCharArray, StringSplitOptions.RemoveEmptyEntries)(i).Split("="c)(1)))
+                    Catch
+                    End Try
+                Next
+                Add(Item, colors)
             End If
         Next
     End Sub

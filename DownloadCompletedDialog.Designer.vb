@@ -34,7 +34,6 @@ Partial Class DownloadCompletedDialog
         'btn_open
         '
         Me.btn_open.DialogResult = System.Windows.Forms.DialogResult.Yes
-        Me.btn_open.Enabled = False
         Me.btn_open.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btn_open.Location = New System.Drawing.Point(237, 100)
         Me.btn_open.Name = "btn_open"

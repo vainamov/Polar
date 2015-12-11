@@ -25,7 +25,7 @@ Public Class ShareForm
         Dim Response As String
         Using WC As New WebClient
             Dim responseArray As Byte()
-            responseArray = WC.UploadFile("http://floe.festival.square7.de/floe_upload.php", Filepath)
+            responseArray = WC.UploadFile("http://fdev.markab.uberspace.de/proj/floe/floe_upload.php", Filepath)
             Response = System.Text.Encoding.ASCII.GetString(responseArray)
         End Using
         If Response = "error" Then

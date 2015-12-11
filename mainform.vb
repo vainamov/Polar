@@ -7,6 +7,7 @@ Public Class mainform
 
     Dim Database As IniFile
     WithEvents CLE As ColorListEntry
+    WithEvents DFF As DownloadFromFloe
     Dim ChosenCLE As ColorListEntry
     Dim DatabasePath As String
     Dim ColorListEntries As New List(Of ColorListEntry)
@@ -42,8 +43,9 @@ Public Class mainform
                 End If
             End If
         ElseIf e.KeyCode = Keys.F AndAlso e.Control
-            Dim dff As New DownloadFromFloe
-            dff.Show()
+            DFF = New DownloadFromFloe
+            AddHandler DFF.DownloadFinished, AddressOf LoadFromFile
+            DFF.Show()
         Else
 
         End If

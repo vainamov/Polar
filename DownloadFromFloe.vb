@@ -6,6 +6,8 @@ Public Class DownloadFromFloe
     Private WithEvents FLI As FloeListItem
     Private FloeListItems As New List(Of FloeListItem)
 
+    Public Event DownloadFinished(ByVal Path As String)
+
     Sub Add(ByVal Filename As String, ByVal Colors As List(Of Color))
         Dim tFLI As New FloeListItem
         tFLI.Author = Filename.Split("."c)(0).Split("_"c)(0)
@@ -24,11 +26,11 @@ Public Class DownloadFromFloe
         Using SFD As New SaveFileDialog With {.Filter = "Polar-Colorsets (*.pcs)|*.pcs", .Title = "Save", .FileName = Setname}
             If SFD.ShowDialog() = DialogResult.OK Then
                 System.IO.File.WriteAllText(SFD.FileName, content)
-                Dim dcd As New DownloadCompletedDialog
-                dcd.Path = SFD.FileName
-                If dcd.ShowDialog() = DialogResult.Yes Then
-                    'Process.Start(Application.ExecutablePath & " " & SFD.FileName)
-                End If
+                'Dim dcd As New DownloadCompletedDialog
+                'dcd.Path = SFD.FileName
+                'If dcd.ShowDialog() = DialogResult.Yes Then
+                '    RaiseEvent DownloadFinished(SFD.FileName)
+                'End If
             End If
         End Using
     End Sub
@@ -60,11 +62,11 @@ Public Class DownloadFromFloe
 
     Private Sub DownloadFromFloe_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim WC As New WebClient
-        Dim content As String = WC.DownloadString("http://floe.festival.square7.de/floe_list.php")
+        Dim content As String = WC.DownloadString("http://fdev.markab.uberspace.de/proj/floe/floe_list.php")
         For Each Item As String In content.Split("|"c)
             If Not Item = "floe:list" Then
                 Dim WC2 As New WebClient
-                Dim content2 As String = WC2.DownloadString("http://floe.festival.square7.de/" & Item)
+                Dim content2 As String = WC2.DownloadString("http://fdev.markab.uberspace.de/proj/floe/" & Item)
                 Dim colors As New List(Of Color)
                 For i As Integer = 2 To 8
                     Try

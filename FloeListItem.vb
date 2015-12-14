@@ -51,7 +51,7 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        RaiseEvent Download(String.Format("http://floe.festival.square7.de/{0}_{1}.pcs", Author, Setname), Setname)
+        RaiseEvent Download(String.Format("http://fdev.markab.uberspace.de/proj/floe/{0}_{1}.pcs", Author, Setname), Setname)
     End Sub
 
     Sub New()
@@ -64,6 +64,10 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Preview()
+    End Sub
+
+    Public Sub Preview()
         pnl_color1.Visible = Not pnl_color1.Visible
         pnl_color2.Visible = Not pnl_color2.Visible
         pnl_color3.Visible = Not pnl_color3.Visible
@@ -75,7 +79,7 @@
     End Sub
 
     Private Sub lbl_identifier_Click(sender As Object, e As EventArgs) Handles lbl_identifier.Click
-        Process.Start("http://floe.festival.square7.de/colorset.php?id=" & lbl_identifier.Text)
+        Process.Start("http://fdev.markab.uberspace.de/proj/floe/colorset.php?id=" & lbl_identifier.Text)
     End Sub
 
 End Class

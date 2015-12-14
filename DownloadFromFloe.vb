@@ -79,4 +79,15 @@ Public Class DownloadFromFloe
         Next
     End Sub
 
+    Private Sub SearchTextbox_KeyDown(sender As Object, e As KeyEventArgs) Handles SearchTextbox.KeyDown
+        If e.Control Then
+            Select Case e.KeyCode
+                Case Keys.P
+                    For Each FLI As FloeListItem In Panel2.Controls
+                        FLI.Preview()
+                    Next
+            End Select
+        End If
+    End Sub
+
 End Class
